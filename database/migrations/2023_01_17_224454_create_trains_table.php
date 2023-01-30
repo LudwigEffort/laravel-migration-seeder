@@ -18,12 +18,12 @@ class CreateTrainsTable extends Migration
             $table->string('company', 100);
             $table->string('departure_rail_station', 200);
             $table->string('arrival_rail_station', 200);
-            $table->dateTime('departure_time', 0);
-            $table->dateTime('arrival_time', 0);
+            $table->date('departure_time', 0);
+            $table->date('arrival_time', 0);
             $table->mediumInteger('train_code', false, true);
             $table->tinyInteger('number_carriage', false, true);
-            $table->boolean('in_time');
-            $table->boolean('delay');
+            $table->boolean('in_time')->nullable();
+            $table->boolean('delay')->nullable();
             $table->timestamps();
         });
     }
